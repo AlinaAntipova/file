@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ci35aucxqqecr"]
+
+[ext_resource type="Script" uid="uid://bjdpbee4okv3h" path="res://scripts/mushrooms.gd" id="1_gjkia"]
+[ext_resource type="Texture2D" uid="uid://cy25alhegtskl" path="res://assets/ASSET_PACK_02/sprite.png" id="2_ccqf2"]
+[ext_resource type="Resource" uid="uid://c5nbdks83o5mt" path="res://resources/mushroom.tres" id="2_g5jiy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccx0n"]
+atlas = ExtResource("2_ccqf2")
+region = Rect2(0, 15.910728, 16.04005, 17.014637)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gjkia"]
+radius = 14.0
+
+[node name="Mushrooms" type="Node2D" unique_id=1772977449]
+script = ExtResource("1_gjkia")
+item_resources = ExtResource("2_g5jiy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1231479526]
+texture = SubResource("AtlasTexture_ccx0n")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=373176163]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1322783465]
+shape = SubResource("CircleShape2D_gjkia")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

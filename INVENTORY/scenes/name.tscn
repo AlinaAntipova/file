@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bcbgk8tw52yy8"]
+
+[ext_resource type="FontFile" uid="uid://dgcf0eamped4r" path="res://assets/ASSET_PACK_02/ComicoroRu_0.ttf" id="1_dip7r"]
+[ext_resource type="Script" uid="uid://cjnkyruxfqrp0" path="res://scripts/name.gd" id="1_uopts"]
+
+[node name="Node2D" type="Node2D" unique_id=801881541 node_paths=PackedStringArray("name_input")]
+script = ExtResource("1_uopts")
+name_input = NodePath("ColorRect/LineEdit")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=656967876]
+offset_right = 225.0
+offset_bottom = 130.0
+color = Color(0.96766907, 0.8520972, 0.91363204, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=169328152]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 38.0
+offset_right = 137.0
+offset_bottom = 61.0
+theme_override_fonts/font = ExtResource("1_dip7r")
+text = "Введите имя:"
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect" unique_id=1771258063]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 55.0
+offset_right = 136.5
+offset_bottom = 86.0
+
+[node name="Button" type="Button" parent="ColorRect" unique_id=976832773]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 92.0
+offset_right = 129.0
+offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("1_dip7r")
+text = "Ввод
+"
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]

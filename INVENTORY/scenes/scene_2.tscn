@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://k100dujrrru2"]
+
+[ext_resource type="FontFile" uid="uid://dgcf0eamped4r" path="res://assets/ASSET_PACK_02/ComicoroRu_0.ttf" id="1_xe0r6"]
+[ext_resource type="PackedScene" uid="uid://biao4faqy5uxi" path="res://scenes/camp.tscn" id="2_vsrvg"]
+
+[node name="scene_2" type="Node2D" unique_id=1796834211]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=447376349]
+offset_right = 226.0
+offset_bottom = 132.0
+color = Color(0, 1, 0.16470589, 1)
+
+[node name="Label" type="Label" parent="." unique_id=11992369]
+offset_left = 85.0
+offset_top = 48.0
+offset_right = 128.0
+offset_bottom = 81.0
+theme_override_fonts/font = ExtResource("1_xe0r6")
+text = "DANGER
+"
+
+[node name="Camp" parent="." unique_id=863661836 instance=ExtResource("2_vsrvg")]
+position = Vector2(73, 34)

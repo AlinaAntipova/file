@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://ddy645d3xdvn5"]
+
+[ext_resource type="Script" uid="uid://d0csbi1ay0vao" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Resource" uid="uid://bpakehig5xlok" path="res://resources/axe.tres" id="2_dqkch"]
+[ext_resource type="Texture2D" uid="uid://cx1yhxs884snw" path="res://assets/ASSET_PACK_02/player.png" id="2_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://cswyrdkm7eckj" path="res://scenes/item.tscn" id="2_qlg0r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj21s"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v41lb"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnt1c"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o048x"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmlmv"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_xj21s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v41lb")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_g2els")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": 1,
+"name": &"sit",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnt1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o048x")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ccx0n"]
+radius = 5.0990195
+
+[node name="Player" type="CharacterBody2D" unique_id=1909975765 node_paths=PackedStringArray("anim", "hand")]
+script = ExtResource("1_g2els")
+anim = NodePath("AnimatedSprite2D")
+item_world_scene = ExtResource("2_qlg0r")
+hand = NodePath("Hand")
+item_resources = ExtResource("2_dqkch")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=65627110]
+zoom = Vector2(2, 2)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=981150282]
+position = Vector2(-1.6250051, -0.25)
+scale = Vector2(1.4531257, 1.2812499)
+sprite_frames = SubResource("SpriteFrames_tmlmv")
+animation = &"sit"
+autoplay = "idle"
+frame_progress = 0.8641746
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1616847114]
+position = Vector2(-2, 0)
+shape = SubResource("CircleShape2D_ccx0n")
+
+[node name="Hand" type="Sprite2D" parent="." unique_id=809897377]
+position = Vector2(-8, 0)

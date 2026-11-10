@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cjldnglfu34qf"]
+
+[ext_resource type="Script" uid="uid://rwhk08jh0wy1" path="res://scripts/node_2d.gd" id="1_rnjyy"]
+[ext_resource type="Texture2D" uid="uid://cy25alhegtskl" path="res://assets/ASSET_PACK_02/sprite.png" id="2_4vge2"]
+[ext_resource type="FontFile" uid="uid://dgcf0eamped4r" path="res://assets/ASSET_PACK_02/ComicoroRu_0.ttf" id="3_04qyp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccx0n"]
+atlas = ExtResource("2_4vge2")
+region = Rect2(47.122433, 15.987711, 32.877567, 16.025412)
+
+[node name="Node2D" type="CanvasLayer" unique_id=970305185 node_paths=PackedStringArray("label", "label_name")]
+script = ExtResource("1_rnjyy")
+label = NodePath("MarginContainer/HBoxContainer/Label")
+label_name = NodePath("MarginContainer2/Label2")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=586993216]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 7
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1090911837]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=194499080]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_ccx0n")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer" unique_id=281030795]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_04qyp")
+text = "
+"
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=329707049]
+anchors_preset = -1
+anchor_right = 0.177
+anchor_bottom = 0.303
+offset_left = 156.0
+offset_top = 2.0
+offset_right = 186.998
+offset_bottom = -22.996002
+grow_vertical = 2
+theme_override_constants/margin_left = 11
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 12
+
+[node name="Label2" type="Label" parent="MarginContainer2" unique_id=624365460]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_04qyp")

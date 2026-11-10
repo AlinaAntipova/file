@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://halo5lo50pak"]
+
+[ext_resource type="Script" uid="uid://dvui3qs08upv7" path="res://scripts/inventory.gd" id="1_bvatn"]
+[ext_resource type="Texture2D" uid="uid://ce4nryf73j7hs" path="res://assets/ASSET_PACK_02/katya.png" id="2_hj2ta"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty45s"]
+atlas = ExtResource("2_hj2ta")
+region = Rect2(0, 0, 17.19511, 15.950134)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hj2ta"]
+texture = SubResource("AtlasTexture_ty45s")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ty45s"]
+load_path = "res://.godot/imported/katya.png-cb8a6a359205eca08adcb5657fd45b2c.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53g1v"]
+atlas = SubResource("CompressedTexture2D_ty45s")
+region = Rect2(15.694012, 0, 16.421104, 15.950134)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yyk2a"]
+texture = SubResource("AtlasTexture_53g1v")
+
+[sub_resource type="Theme" id="Theme_qw0r6"]
+Button/styles/focus = SubResource("StyleBoxTexture_hj2ta")
+Button/styles/normal = SubResource("StyleBoxTexture_yyk2a")
+
+[node name="Slots" type="CanvasLayer" unique_id=243862032 node_paths=PackedStringArray("grid")]
+script = ExtResource("1_bvatn")
+grid = NodePath("MarginContainer/GridContainer")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1983962252]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_qw0r6")
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer" unique_id=532246220]
+layout_mode = 2
